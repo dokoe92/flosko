@@ -1,4 +1,4 @@
-package koeberl.dominik.flosko.flosko.model;
+package koeberl.dominik.flosko.model;
 
 public enum Status {
     OFFEN,

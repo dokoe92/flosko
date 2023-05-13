@@ -1,4 +1,4 @@
-package koeberl.dominik.flosko.flosko;
+package koeberl.dominik.flosko;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

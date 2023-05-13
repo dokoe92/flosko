@@ -1,4 +1,4 @@
-package koeberl.dominik.flosko.flosko.model;
+package koeberl.dominik.flosko.model;
 
 import java.time.LocalDateTime;
 
