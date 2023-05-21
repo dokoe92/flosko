@@ -1,0 +1,15 @@
+
+### Alle Aufträge anzeigen lassen
+GET http://localhost:8080/auftrag
+
+### Aufrtage erstellen
+POST http://localhost:8080/auftrag
+Content-Type: application/json
+
+{
+  "customerName" : "Herbert Wurst",
+  "customerPlz": 1000,
+  "customerStreet": "Wurststraße",
+  "description": "Haus reparieren",
+  "orderDate": "2023-05-20"
+}
