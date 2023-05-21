@@ -1,11 +1,14 @@
 package koeberl.dominik.flosko.model;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDate;
 
 @Entity
 @Table(name="orders")
+@Getter @Setter
 public class Order {
 
     @Id
@@ -25,38 +28,27 @@ public class Order {
     @Column(name="order_date")
     private LocalDate orderDate;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name="status")
+    private Status status;
+
+
     public Order() {}
 
-    public Order(String customerName, Integer customerPlz, String customerStreet, String description,  LocalDate orderDate) {
+    public Order(String customerName, Integer customerPlz, String customerStreet, String description) {
         this.customerName = customerName;
         this.customerPlz = customerPlz;
         this.customerStreet = customerStreet;
         this.description = description;
-        this.orderDate = orderDate;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public String getCustomerName() {
-        return customerName;
-    }
-
-    public Integer getCustomerPlz() {
-        return customerPlz;
-    }
-
-    public String getCustomerStreet() {
-        return customerStreet;
-    }
-
-    public String getDescription() {
-        return description;
+    @PrePersist
+    public void prePersist() {
+        this.orderDate = LocalDate.now();
+        this.status = Status.OFFEN;
     }
 
 
-    public LocalDate getOrderDate() {
-        return orderDate;
-    }
+
+
 }

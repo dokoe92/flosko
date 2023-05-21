@@ -10,6 +10,13 @@ Content-Type: application/json
   "customerName" : "Herbert Wurst",
   "customerPlz": 1000,
   "customerStreet": "Wurststraße",
-  "description": "Haus reparieren",
-  "orderDate": "2023-05-20"
+  "description": "Haus reparieren"
+}
+
+### Status über die Auftrags Id ändern
+PUT http://localhost:8080/auftrag/status/1
+Content-Type: application/json
+
+{
+  "status": "IN_ARBEIT"
 }

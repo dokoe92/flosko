@@ -3,6 +3,7 @@ package koeberl.dominik.flosko.service;
 import jakarta.persistence.TypedQuery;
 import jakarta.transaction.Transactional;
 import koeberl.dominik.flosko.model.Order;
+import koeberl.dominik.flosko.model.Status;
 import koeberl.dominik.flosko.repository.OrderDao;
 import org.springframework.stereotype.Component;
 
@@ -27,6 +28,15 @@ public class OrderService {
     public List<Order> getAllOrders() {
         return orderDao.getAllOrders();
     }
+
+    @Transactional
+    public Order updateStatus(Integer id, Status status) {
+        return orderDao.updateStatus(id, status);
+    }
+
+
+
+
 
 
 }
